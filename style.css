@@ -179,3 +179,21 @@ h2 { color: #c0392b; }
     text-align: left; 
     border-top: 5px solid #d81b60; 
 }
+
+/* Hidden Next Buttons */
+.hidden-btn {
+    display: none; /* Takes it completely out of the layout initially */
+    opacity: 0;
+}
+
+.show-btn {
+    display: inline-block; 
+    opacity: 1;
+    margin-top: 35px;
+    animation: fadeIn 0.8s ease forwards; /* Smooth fade-in */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
