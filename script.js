@@ -1,17 +1,34 @@
-// Function to handle the navigation tabs
-function showSection(sectionId) {
-    // 1. Find all sections and remove the 'active' class from them
+// Function to switch tabs AND highlight the active button
+function showSection(sectionId, clickedButton) {
+    // 1. Hide all sections
     const sections = document.querySelectorAll('.view-section');
-    sections.forEach(section => {
-        section.classList.remove('active');
-    });
+    sections.forEach(section => section.classList.remove('active'));
 
-    // 2. Add the 'active' class ONLY to the section we want to see
+    // 2. Remove 'active' class from all nav buttons
+    const navButtons = document.querySelectorAll('.nav-btn');
+    navButtons.forEach(btn => btn.classList.remove('active'));
+
+    // 3. Show the selected section
     document.getElementById(sectionId).classList.add('active');
+
+    // 4. Highlight the clicked button
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
 }
 
-// Function to handle clicking a balloon
+// Special function for the "Start Celebration" button
+function goToMemories() {
+    const memoryBtn = document.getElementById('nav-memories');
+    showSection('memories', memoryBtn);
+}
+
+// Function to reveal photos on tap
+function revealPhoto(element) {
+    element.classList.add('revealed');
+}
+
+// Function to pop balloons
 function popBalloon(element) {
-    // Adds the 'popped' CSS class, which changes opacity to 0
     element.classList.add('popped');
 }
