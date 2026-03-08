@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Women's Day!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('memories')">Memories</button>
+        <button onclick="showSection('balloons')">Balloons</button>
+        <button onclick="showSection('message')">Message</button>
+    </nav>
+
+    <main>
+        <section id="home" class="view-section active">
+            <h2>March 8th Celebration</h2>
+            <h1>Happy International Women's Day 💜</h1>
+            <p>"To the woman who illuminates every room..."</p>
+            <button class="cta-btn" onclick="showSection('balloons')">Start Celebration</button>
+        </section>
+
+        <section id="memories" class="view-section">
+            <h2>Beautiful Memories</h2>
+            <p>Moments that capture your gorgeous smile.</p>
+            <div class="photo-grid">
+                <div class="photo-placeholder">Photo 1</div>
+                <div class="photo-placeholder">Photo 2</div>
+            </div>
+        </section>
+
+        <section id="balloons" class="view-section">
+            <h2>Pop the Balloons!</h2>
+            <p>Tap each balloon to reveal a surprise message.</p>
+            <div class="balloon-container">
+                <div class="message-card">
+                    <p class="hidden-text">You are amazing!</p>
+                    <div class="balloon-cover" onclick="popBalloon(this)">🎈</div>
+                </div>
+                <div class="message-card">
+                    <p class="hidden-text">Keep shining brightly!</p>
+                    <div class="balloon-cover" onclick="popBalloon(this)">🎈</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="message" class="view-section">
+            <h2>A Special Message</h2>
+            <p>Happy International Women's Day, Nithya! Wishing you a day filled with goodness and warmth.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
