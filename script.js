@@ -23,12 +23,49 @@ function goToMemories() {
     showSection('memories', memoryBtn);
 }
 
+// Set up our counters
+let revealedPhotosCount = 0;
+let poppedBalloonsCount = 0;
+
 // Function to reveal photos on tap
 function revealPhoto(element) {
-    element.classList.add('revealed');
+    if (!element.classList.contains('revealed')) {
+        element.classList.add('revealed');
+        revealedPhotosCount++;
+
+        // If all 4 photos are revealed, show the Next button
+        if (revealedPhotosCount === 4) {
+            const nextBtn = document.getElementById('next-to-balloons');
+            nextBtn.classList.remove('hidden-btn');
+            nextBtn.classList.add('show-btn');
+        }
+    }
 }
 
 // Function to pop balloons
 function popBalloon(element) {
-    element.classList.add('popped');
+    if (!element.classList.contains('popped')) {
+        element.classList.add('popped');
+        poppedBalloonsCount++;
+
+        // If all 5 balloons are popped, show the Next button
+        if (poppedBalloonsCount === 5) {
+            const nextBtn = document.getElementById('next-to-message');
+            nextBtn.classList.remove('hidden-btn');
+            nextBtn.classList.add('show-btn');
+        }
+    }
+}
+
+// Button Click Functions
+function goToBalloons() {
+    const balloonBtn = document.getElementById('nav-balloons');
+    showSection('balloons', balloonBtn);
+    window.scrollTo(0, 0); // Scrolls back to the top of the page smoothly
+}
+
+function goToMessage() {
+    const messageBtn = document.getElementById('nav-message');
+    showSection('message', messageBtn);
+    window.scrollTo(0, 0); 
 }
