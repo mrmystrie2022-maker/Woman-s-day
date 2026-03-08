@@ -9,10 +9,10 @@
 <body>
 
     <nav class="top-nav">
-        <button onclick="showSection('home')">Home</button>
-        <button onclick="showSection('memories')">Memories</button>
-        <button onclick="showSection('balloons')">Balloons</button>
-        <button onclick="showSection('message')">Message</button>
+        <button id="nav-home" class="nav-btn active" onclick="showSection('home', this)">Home</button>
+        <button id="nav-memories" class="nav-btn" onclick="showSection('memories', this)">Memories</button>
+        <button id="nav-balloons" class="nav-btn" onclick="showSection('balloons', this)">Balloons</button>
+        <button id="nav-message" class="nav-btn" onclick="showSection('message', this)">Message</button>
     </nav>
 
     <main>
@@ -20,15 +20,34 @@
             <h2>March 8th Celebration</h2>
             <h1>Happy International Women's Day 💜</h1>
             <p>"To the woman who illuminates every room..."</p>
-            <button class="cta-btn" onclick="showSection('balloons')">Start Celebration</button>
+            <button class="cta-btn" onclick="goToMemories()">Start Celebration</button>
         </section>
 
         <section id="memories" class="view-section">
             <h2>Beautiful Memories</h2>
-            <p>Moments that capture your gorgeous smile.</p>
+            <p>Tap the tiles to reveal our moments!</p>
             <div class="photo-grid">
-                <div class="photo-placeholder">Photo 1</div>
-                <div class="photo-placeholder">Photo 2</div>
+                
+                <div class="photo-wrapper" onclick="revealPhoto(this)">
+                    <img src="pic1.jpg" alt="Us 1" class="real-photo">
+                    <div class="photo-cover">✨ Tap ✨</div>
+                </div>
+                
+                <div class="photo-wrapper" onclick="revealPhoto(this)">
+                    <img src="pic2.jpg" alt="Us 2" class="real-photo">
+                    <div class="photo-cover">✨ Tap ✨</div>
+                </div>
+
+                <div class="photo-wrapper" onclick="revealPhoto(this)">
+                    <img src="pic3.jpg" alt="Us 3" class="real-photo">
+                    <div class="photo-cover">✨ Tap ✨</div>
+                </div>
+
+                <div class="photo-wrapper" onclick="revealPhoto(this)">
+                    <img src="pic4.jpg" alt="Us 4" class="real-photo">
+                    <div class="photo-cover">✨ Tap ✨</div>
+                </div>
+
             </div>
         </section>
 
@@ -36,32 +55,26 @@
             <h2>Pop the Balloons!</h2>
             <p>Tap each balloon to reveal a surprise message.</p>
             <div class="balloon-container">
-                
                 <div class="message-card">
                     <p class="hidden-text">Half a decade with you still feels like day one. 💜</p>
                     <div class="balloon-cover" onclick="popBalloon(this)">🎈</div>
                 </div>
-                
                 <div class="message-card">
                     <p class="hidden-text">Your smile is my absolute favorite UI element.</p>
                     <div class="balloon-cover" onclick="popBalloon(this)">🎈</div>
                 </div>
-
                 <div class="message-card">
                     <p class="hidden-text">You are the strongest, most graceful woman I know.</p>
                     <div class="balloon-cover" onclick="popBalloon(this)">🎈</div>
                 </div>
-
                 <div class="message-card">
                     <p class="hidden-text">Thank you for building this beautiful world with me.</p>
                     <div class="balloon-cover" onclick="popBalloon(this)">🎈</div>
                 </div>
-
                 <div class="message-card">
                     <p class="hidden-text">I am so lucky to be yours today and always.</p>
                     <div class="balloon-cover" onclick="popBalloon(this)">🎈</div>
                 </div>
-
             </div>
         </section>
 
@@ -78,7 +91,6 @@
                 </p>
             </div>
         </section>
-        
     </main>
 
     <script src="script.js"></script>
